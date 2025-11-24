@@ -419,6 +419,7 @@ body {
   overflow: hidden;
   transform-origin: center;
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  z-index: 0; /* ✅ keep content above the glow */
 }
 
 .card::before {
@@ -428,6 +429,8 @@ body {
   background: radial-gradient(circle, rgba(56, 189, 248, 0.2), transparent 65%);
   opacity: 0;
   transition: opacity 0.2s ease;
+  z-index: -1;          /* ✅ put glow behind */
+  pointer-events: none; /* ✅ don't block clicks */
 }
 
 .card:hover::before {
@@ -652,4 +655,3 @@ body {
     padding-top: 1.8rem;
   }
 }
-
