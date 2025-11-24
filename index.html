@@ -43,7 +43,7 @@
       </nav>
     </header>
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== HERO (text only, no photo) ===== -->
     <section class="hero">
       <div class="hero-left reveal">
         <p class="hero-pill">MS Computer Engineering @ NYU · AI/ML & Full-Stack</p>
@@ -64,19 +64,20 @@
           <span>📍 New York, USA</span>
           <span>💻 <a href="https://github.com/karunaav" target="_blank">github.com/karunaav</a></span>
         </div>
-      </div>
 
-      <div class="hero-right reveal">
-        <div class="profile-card">
-          <div class="profile-glow"></div>
-          <!-- 🔽 This image will update when you upload a file below -->
-          <img
-            id="profileImg"
-            class="profile-img"
-            src="C:\Users\karun\Downloads\00d6c366-b822-4057-87c8-4be58884ce28.jpeg"
-            alt="Profile photo of Karuna"
-          />
-        
+        <div class="hero-metrics">
+          <div class="metric-chip">
+            <span class="metric-label">Focus</span>
+            <span class="metric-value">AI · Health · Finance</span>
+          </div>
+          <div class="metric-chip">
+            <span class="metric-label">Stack</span>
+            <span class="metric-value">FastAPI · React · ML</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== ABOUT ===== -->
     <section id="about" class="section about reveal">
       <h2 class="section-title">About</h2>
@@ -361,22 +362,6 @@
     );
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-    // Photo upload preview
-    const uploadInput = document.getElementById("photoUpload");
-    const profileImg = document.getElementById("profileImg");
-
-    if (uploadInput && profileImg) {
-      uploadInput.addEventListener("change", (e) => {
-        const file = e.target.files && e.target.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = (ev) => {
-          profileImg.src = ev.target.result;
-        };
-        reader.readAsDataURL(file);
-      });
-    }
   </script>
 </body>
 </html>
