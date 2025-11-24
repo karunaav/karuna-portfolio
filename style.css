@@ -360,8 +360,8 @@ body {
 }
 
 .profile-frame {
-  width: 180px;
-  height: 180px;
+  width: 230px;   /* increased from 180px */
+  height: 230px;  /* increased from 180px */
   border-radius: 999px;
   padding: 4px;
   background: radial-gradient(circle at top left, #22d3ee, #a855f7);
@@ -695,7 +695,8 @@ body {
   }
 
   .profile-frame {
-    width: 140px;
-    height: 140px;
+    width: 170px;  /* increased from 140px */
+    height: 170px; /* increased from 140px */
   }
 }
+
