@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Karuna V | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Karuna V – MS Computer Engineering at NYU, AI/ML & Full-Stack Developer, UI/UX and Frontend Enthusiast."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+      <div class="nav-left">
+        <span class="logo-dot"></span>
+        <span class="logo-text">Karuna V</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="hero-tagline">MS Computer Engineering @ NYU · AI/ML & Full-Stack Dev</p>
+        <h1>Hi, I'm <span class="accent">Karuna</span>.</h1>
+        <p class="hero-subtitle">
+          I design & build <strong>AI-powered experiences</strong> end-to-end — from models and APIs
+          to clean, user-friendly interfaces. I love working at the intersection of
+          <strong>machine learning, full-stack engineering, and UX.</strong>
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary">View My Projects</a>
+          <a href="#contact" class="btn secondary">Let’s Collaborate</a>
+        </div>
+        <div class="hero-meta">
+          <span>📍 New York, USA</span>
+          <span>💻 GitHub: <a href="https://github.com/karunaav" target="_blank">karunaav</a></span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-pill">⚙ AI / ML · Full-Stack · UI/UX</div>
+        <div class="hero-card-content">
+          <h2>Currently</h2>
+          <ul>
+            <li>🎓 MS Computer Engineering @ NYU Tandon</li>
+            <li>🧠 Building AI companions & RAG chatbots</li>
+            <li>📈 Experimenting with sentiment-based stock models</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section about">
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text">
+        I'm a graduate student in <strong>Computer Engineering at NYU Tandon</strong> with a background
+        in <strong>Electronics & Telecommunication (B.E., Dayananda Sagar College of Engineering)</strong>.
+        I enjoy building systems that blend <strong>machine learning, backend APIs, and delightful frontends</strong>.
+      </p>
+      <p class="about-text">
+        My recent work spans <strong>AI companions, sentiment-aware financial models, OCR tools,
+        and RAG-based PDF assistants</strong>. I’m also comfortable translating Figma concepts into
+        production-ready UIs using <strong>React, HTML/CSS/JS, and Tailwind/modern CSS.</strong>
+      </p>
+
+      <div class="pill-grid">
+        <div class="pill-group">
+          <h3>Tech Focus</h3>
+          <div class="pill-row">
+            <span class="pill">Python</span>
+            <span class="pill">Java</span>
+            <span class="pill">FastAPI</span>
+            <span class="pill">Flask</span>
+            <span class="pill">React</span>
+            <span class="pill">Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="pill-group">
+          <h3>AI & Data</h3>
+          <div class="pill-row">
+            <span class="pill">Machine Learning</span>
+            <span class="pill">FinBERT</span>
+            <span class="pill">Transformers</span>
+            <span class="pill">SHAP</span>
+            <span class="pill">Pandas</span>
+            <span class="pill">NumPy</span>
+          </div>
+        </div>
+        <div class="pill-group">
+          <h3>UX & Tools</h3>
+          <div class="pill-row">
+            <span class="pill">Figma</span>
+            <span class="pill">Wireframing</span>
+            <span class="pill">Prototyping</span>
+            <span class="pill">Git & GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section projects">
+      <h2 class="section-title">Projects</h2>
+
+      <h3 class="section-subtitle">Featured Work</h3>
+      <div class="cards-grid">
+        <!-- Skylar -->
+        <article class="card">
+          <div class="card-header">
+            <h3>Skylar – Gentle AI Companion</h3>
+            <span class="badge">Full-Stack · LLM</span>
+          </div>
+          <p>
+            A cozy AI companion chat app built with <strong>React + FastAPI</strong> that focuses on
+            supportive conversation (not therapy). It features streaming responses, session memory,
+            customizable “vibes”, and safety-aware messaging.
+          </p>
+          <p class="card-tech">
+            Tech: React, Vite, FastAPI, Python, OpenAI/LLM APIs, SSE
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/karunaav/Skylar-companion" target="_blank">Code</a>
+            <a href="https://skylar-frontend.onrender.com" target="_blank">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- Sentiment Forecast -->
+        <article class="card">
+          <div class="card-header">
+            <h3>Sentiment-Aware Stock Forecasting</h3>
+            <span class="badge">ML · Finance</span>
+          </div>
+          <p>
+            A full-stack AI app that predicts next-day stock returns using Transformers and
+            <strong>FinBERT sentiment analysis</strong>. Includes a Dash dashboard with backtesting
+            metrics (CAGR, Sharpe, MSE) and SHAP-based model explainability.
+          </p>
+          <p class="card-tech">
+            Tech: Python, FastAPI, Dash, FinBERT, SHAP, MLflow
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/karunaav/Sentiment-forecast-v3" target="_blank">Code</a>
+            <a href="https://sentiment-forecast-v3.onrender.com/dashboard/" target="_blank">Live Dashboard</a>
+          </div>
+        </article>
+
+        <!-- RAG Document Search -->
+        <article class="card">
+          <div class="card-header">
+            <h3>AI Document Search – RAG PDF Chatbot</h3>
+            <span class="badge">RAG · NLP</span>
+          </div>
+          <p>
+            Upload a PDF and chat with it. The system performs <strong>TF-IDF based retrieval</strong>,
+            chunking documents and returning contextual answers through a clean React interface.
+          </p>
+          <p class="card-tech">
+            Tech: FastAPI, LangChain, scikit-learn, PyPDF2, React, Vite, Tailwind CSS
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/karunaav/Document-Search" target="_blank">Code</a>
+          </div>
+        </article>
+
+        <!-- AI Bookshelf Scanner -->
+        <article class="card">
+          <div class="card-header">
+            <h3>AI Bookshelf Scanner</h3>
+            <span class="badge">CV · OCR</span>
+          </div>
+          <p>
+            A bookshelf scanner that uses <strong>EasyOCR</strong> to read book spines and helps
+            catalog and search your personal library. Built as a Flask app with a simple responsive UI.
+          </p>
+          <p class="card-tech">
+            Tech: Python, Flask, EasyOCR, HTML, CSS, JavaScript
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/karunaav/AI-Bookshelf-Scanner" target="_blank">Code</a>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="section-subtitle undergrad-subtitle">Undergraduate Projects</h3>
+      <div class="cards-grid undergrad-grid">
+        <!-- Verilog Vending Machine -->
+        <article class="card">
+          <div class="card-header">
+            <h3>Vending Machine Controller (Verilog)</h3>
+            <span class="badge">Digital Design</span>
+          </div>
+          <p>
+            Designed a finite state machine (FSM)-based vending machine in Verilog, handling coin input,
+            product selection, balance tracking, and change return on FPGA/HDL.
+          </p>
+          <p class="card-tech">
+            Tech: Verilog, FSM Design, Digital Logic, FPGA
+          </p>
+        </article>
+
+        <!-- Morse Code Transceiver -->
+        <article class="card">
+          <div class="card-header">
+            <h3>Morse Code Transceiver</h3>
+            <span class="badge">Comms</span>
+          </div>
+          <p>
+            Built a Morse code transceiver that encodes text to Morse and transmits/receives it over a
+            communication channel, reinforcing digital and wireless communication concepts.
+          </p>
+          <p class="card-tech">
+            Tech: Communication Systems, Microcontroller/FPGA, Timing Logic
+          </p>
+        </article>
+
+        <!-- Health Care Management System -->
+        <article class="card">
+          <div class="card-header">
+            <h3>Java E-Health Care Management System</h3>
+            <span class="badge">Full-Stack</span>
+          </div>
+          <p>
+            Developed a healthcare management system with Java and SQL to manage patient records,
+            appointments, and billing. Frontend built with HTML/CSS/JS and backed by a relational DB.
+          </p>
+          <p class="card-tech">
+            Tech: Java, SQL, HTML, CSS, JavaScript
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="section experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>UI/UX & Front-End Intern – Consolewaves Pvt Ltd</h3>
+          <p class="timeline-meta">Feb 2025 – May 2025 · Remote/India</p>
+          <ul>
+            <li>Designed responsive web UIs and a science-expo quiz using Figma, HTML, CSS, and JavaScript.</li>
+            <li>Converted wireframes into production-ready frontend components with attention to UX and accessibility.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Full-Stack Web Development Intern – Beekoder Technologies Pvt Ltd</h3>
+          <p class="timeline-meta">Oct 2023 – Nov 2023 · India</p>
+          <ul>
+            <li>Built a multi-page restaurant website with menu, reservation flows, and data stored in SQL.</li>
+            <li>Collaborated on frontend layouts, backend logic, and documentation.</li>
+          </ul>
+        </div>
+
+        <!-- You can add more experiences here later -->
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="section education">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <h3>New York University – Tandon School of Engineering</h3>
+          <p class="edu-meta">M.S. in Computer Engineering · 2025 – 2027 (in progress)</p>
+          <p>
+            Focus on AI/ML, full-stack systems, and hardware-aware computing, tying together
+            machine learning with strong engineering fundamentals.
+          </p>
+        </div>
+        <div class="edu-card">
+          <h3>Dayananda Sagar College of Engineering</h3>
+          <p class="edu-meta">B.E. in Electronics & Telecommunication</p>
+          <p>
+            Core coursework in communication systems, digital and analog electronics, embedded systems,
+            VLSI, and mini-projects such as vending machine controller and Morse code transceiver.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-text">
+        I’m open to internships, research roles, and collaborations in
+        <strong>AI/ML, full-stack development, and product-focused engineering.</strong>
+      </p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Say hello</h3>
+          <p>📧 <a href="mailto:fk2496@nyu.edu">fk2496@nyu.edu</a></p>
+          <p>📱 <a href="tel:+17328192358">+1-732-819-2358</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Profiles</h3>
+          <p>
+            💼 <a href="https://www.linkedin.com/in/karuna-v-8a41b1251" target="_blank">LinkedIn</a>
+          </p>
+          <p>
+            💻 <a href="https://github.com/karunaav" target="_blank">GitHub</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p>© <span id="year"></span> Karuna V · Built with HTML & CSS</p>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
