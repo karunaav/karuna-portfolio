@@ -2,20 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Karuna V | Portfolio</title>
+  <title>Karuna V | Animated Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
     content="Portfolio of Karuna V – MS Computer Engineering at NYU, AI/ML & Full-Stack Developer, UI/UX and Frontend Enthusiast."
   />
+
+  <!-- Stylish Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Animated background shapes -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
   <div class="page-wrapper">
     <!-- ===== NAVBAR ===== -->
     <header class="navbar reveal">
       <div class="nav-left">
-        <span class="logo-dot"></span>
+        <span class="logo-orbit">
+          <span class="logo-dot"></span>
+        </span>
         <span class="logo-text">Karuna V</span>
       </div>
       <nav class="nav-links">
@@ -29,80 +45,92 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero">
-      <div class="hero-text reveal">
-        <p class="hero-tagline">MS Computer Engineering @ NYU · AI/ML & Full-Stack Dev</p>
-        <h1>Hi, I'm <span class="accent">Karuna</span>.</h1>
+      <div class="hero-left reveal">
+        <p class="hero-pill">MS Computer Engineering @ NYU · AI/ML & Full-Stack</p>
+        <h1>
+          Crafting <span class="gradient-text">intelligent</span><br />
+          & animated experiences.
+        </h1>
         <p class="hero-subtitle">
-          I design & build <strong>AI-powered experiences</strong> end-to-end — from models and APIs
-          to clean, user-friendly interfaces. I love working at the intersection of
-          <strong>machine learning, full-stack engineering, and UX.</strong>
+          I’m Karuna, a developer who loves building <strong>AI-driven apps</strong> with
+          playful, polished frontends — from calorie-aware health tools to
+          sentiment-driven stock forecasting and RAG chatbots.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn primary">View My Projects</a>
-          <a href="#contact" class="btn secondary">Let’s Collaborate</a>
+          <a href="#projects" class="btn btn-primary">✨ Explore my work</a>
+          <a href="#contact" class="btn btn-ghost">Let’s collaborate</a>
         </div>
         <div class="hero-meta">
           <span>📍 New York, USA</span>
-          <span>💻 GitHub: <a href="https://github.com/karunaav" target="_blank">karunaav</a></span>
+          <span>💻 <a href="https://github.com/karunaav" target="_blank">github.com/karunaav</a></span>
         </div>
       </div>
-      <div class="hero-card reveal">
-        <div class="hero-pill">⚙ AI / ML · Full-Stack · UI/UX</div>
-        <div class="hero-card-content">
-          <h2>Currently</h2>
-          <ul>
-            <li>🎓 MS Computer Engineering @ NYU Tandon</li>
-            <li>🧠 Building AI companions & RAG chatbots</li>
-            <li>📈 Experimenting with sentiment-based stock models</li>
-          </ul>
+
+      <div class="hero-right reveal">
+        <div class="profile-card">
+          <div class="profile-glow"></div>
+          <!-- 🔽 This image will update when you upload a file below -->
+          <img
+            id="profileImg"
+            class="profile-img"
+            src="C:\Users\karun\Downloads\00d6c366-b822-4057-87c8-4be58884ce28.jpeg"
+            alt="Profile photo of Karuna"
+          />
         </div>
+        <label class="upload-label">
+          <input type="file" id="photoUpload" accept="image/*" />
+          📸 Upload your photo
+        </label>
+        <p class="upload-hint">
+          Tip: also add your photo to the repo as <code>profile.jpg</code> and set it as the default later.
+        </p>
       </div>
     </section>
 
     <!-- ===== ABOUT ===== -->
     <section id="about" class="section about reveal">
-      <h2 class="section-title">About Me</h2>
-      <p class="about-text">
-        I'm a graduate student in <strong>Computer Engineering at NYU Tandon</strong> with a background
-        in <strong>Electronics & Telecommunication (B.E., Dayananda Sagar College of Engineering)</strong>.
-        I enjoy building systems that blend <strong>machine learning, backend APIs, and delightful frontends</strong>.
+      <h2 class="section-title">About</h2>
+      <p class="section-text">
+        I’m a graduate student in <strong>Computer Engineering at NYU Tandon</strong> with a
+        background in <strong>Electronics & Telecommunication (B.E., Dayananda Sagar College of Engineering)</strong>.
+        I enjoy blending <strong>machine learning</strong>, <strong>backend engineering</strong>, and
+        <strong>animated UI/UX</strong> to build tools that feel both smart and fun to use.
       </p>
-      <p class="about-text">
-        My recent work spans <strong>AI companions, sentiment-aware financial models, OCR tools,
-        and RAG-based PDF assistants</strong>. I’m also comfortable translating Figma concepts into
-        production-ready UIs using <strong>React, HTML/CSS/JS, and Tailwind/modern CSS.</strong>
+      <p class="section-text">
+        Recently I’ve been working on AI products around <strong>nutrition & health</strong>,
+        <strong>finance</strong>, and <strong>document intelligence</strong> — always trying to make
+        complex systems feel friendly and approachable.
       </p>
 
-      <div class="pill-grid">
-        <div class="pill-group">
-          <h3>Tech Focus</h3>
-          <div class="pill-row">
-            <span class="pill">Python</span>
-            <span class="pill">Java</span>
-            <span class="pill">FastAPI</span>
-            <span class="pill">Flask</span>
-            <span class="pill">React</span>
-            <span class="pill">Tailwind CSS</span>
+      <div class="chip-grid">
+        <div class="chip-group">
+          <h3>Languages & Core</h3>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Java</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">SQL</span>
           </div>
         </div>
-        <div class="pill-group">
-          <h3>AI & Data</h3>
-          <div class="pill-row">
-            <span class="pill">Machine Learning</span>
-            <span class="pill">FinBERT</span>
-            <span class="pill">Transformers</span>
-            <span class="pill">SHAP</span>
-            <span class="pill">Pandas</span>
-            <span class="pill">NumPy</span>
+        <div class="chip-group">
+          <h3>AI / Data</h3>
+          <div class="chips">
+            <span class="chip">Machine Learning</span>
+            <span class="chip">FinBERT</span>
+            <span class="chip">Transformers</span>
+            <span class="chip">SHAP</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">NumPy</span>
           </div>
         </div>
-        <div class="pill-group">
-          <h3>UX & Tools</h3>
-          <div class="pill-row">
-            <span class="pill">Figma</span>
-            <span class="pill">Wireframing</span>
-            <span class="pill">Prototyping</span>
-            <span class="pill">Git & GitHub</span>
+        <div class="chip-group">
+          <h3>Web & UX</h3>
+          <div class="chips">
+            <span class="chip">FastAPI</span>
+            <span class="chip">Flask</span>
+            <span class="chip">React</span>
+            <span class="chip">Tailwind / CSS</span>
+            <span class="chip">Figma</span>
           </div>
         </div>
       </div>
@@ -112,25 +140,45 @@
     <section id="projects" class="section projects">
       <h2 class="section-title reveal">Projects</h2>
 
-      <h3 class="section-subtitle reveal">Featured Work</h3>
+      <h3 class="section-subtitle reveal">Featured</h3>
       <div class="cards-grid">
+        <!-- Calorie Plate AI – FIRST -->
+        <article class="card reveal card-featured">
+          <div class="card-header">
+            <h3>Calorie Plate AI</h3>
+            <span class="badge badge-hot">Health · CV · AI</span>
+          </div>
+          <p class="card-text">
+            AI-powered nutrition assistant that analyzes food and plate images, estimates calories
+            & macros, and supports BMI tracking plus goals for
+            <strong>weight loss or muscle gain</strong>.
+          </p>
+          <p class="card-tech">
+            Tech: FastAPI, Python, Computer Vision, React, REST APIs
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/karunaav/Calorie-Plate-Ai" target="_blank" class="card-btn">Code</a>
+            <a href="https://calorie-plate-ai.onrender.com/" target="_blank" class="card-btn card-btn-secondary">Live Demo</a>
+          </div>
+        </article>
+
         <!-- Skylar -->
         <article class="card reveal">
           <div class="card-header">
             <h3>Skylar – Gentle AI Companion</h3>
-            <span class="badge">Full-Stack · LLM</span>
+            <span class="badge">LLM · Full-Stack</span>
           </div>
-          <p>
-            A cozy AI companion chat app built with <strong>React + FastAPI</strong> that focuses on
-            supportive conversation (not therapy). It features streaming responses, session memory,
-            customizable “vibes”, and safety-aware messaging.
+          <p class="card-text">
+            A cozy AI companion built with <strong>React + FastAPI</strong> focused on supportive,
+            non-therapeutic conversation. Features streaming replies, session memory, customizable
+            “vibes”, and safety-aware behavior.
           </p>
           <p class="card-tech">
-            Tech: React, Vite, FastAPI, Python, OpenAI/LLM APIs, SSE
+            Tech: React, Vite, FastAPI, Python, LLM APIs, SSE
           </p>
           <div class="card-links">
-            <a href="https://github.com/karunaav/Skylar-companion" target="_blank">Code</a>
-            <a href="https://skylar-frontend.onrender.com" target="_blank">Live Demo</a>
+            <a href="https://github.com/karunaav/Skylar-companion" target="_blank" class="card-btn">Code</a>
+            <a href="https://skylar-frontend.onrender.com" target="_blank" class="card-btn card-btn-secondary">Live Demo</a>
           </div>
         </article>
 
@@ -140,55 +188,35 @@
             <h3>Sentiment-Aware Stock Forecasting</h3>
             <span class="badge">ML · Finance</span>
           </div>
-          <p>
-            A full-stack AI app that predicts next-day stock returns using Transformers and
-            <strong>FinBERT sentiment analysis</strong>. Includes a Dash dashboard with backtesting
-            metrics (CAGR, Sharpe, MSE) and SHAP-based model explainability.
+          <p class="card-text">
+            End-to-end app predicting next-day stock returns using Transformer models +
+            <strong>FinBERT sentiment</strong>. Includes a Dash dashboard with backtesting metrics
+            and SHAP-based explainability.
           </p>
           <p class="card-tech">
             Tech: Python, FastAPI, Dash, FinBERT, SHAP, MLflow
           </p>
           <div class="card-links">
-            <a href="https://github.com/karunaav/Sentiment-forecast-v3" target="_blank">Code</a>
-            <a href="https://sentiment-forecast-v3.onrender.com/dashboard/" target="_blank">Live Dashboard</a>
+            <a href="https://github.com/karunaav/Sentiment-forecast-v3" target="_blank" class="card-btn">Code</a>
+            <a href="https://sentiment-forecast-v3.onrender.com/dashboard/" target="_blank" class="card-btn card-btn-secondary">Live Demo</a>
           </div>
         </article>
 
-        <!-- RAG Document Search -->
+        <!-- RAG PDF Chatbot -->
         <article class="card reveal">
           <div class="card-header">
             <h3>AI Document Search – RAG PDF Chatbot</h3>
             <span class="badge">RAG · NLP</span>
           </div>
-          <p>
-            Upload a PDF and chat with it. The system performs <strong>TF-IDF based retrieval</strong>,
-            chunking documents and returning contextual answers through a clean React interface.
+          <p class="card-text">
+            Upload a PDF and chat with it. Uses <strong>TF-IDF + retrieval-augmented generation</strong>
+            to answer questions with relevant context through a sleek React interface.
           </p>
           <p class="card-tech">
-            Tech: FastAPI, LangChain, scikit-learn, PyPDF2, React, Vite, Tailwind CSS
+            Tech: FastAPI, LangChain, scikit-learn, PyPDF2, React, Tailwind CSS
           </p>
           <div class="card-links">
-            <a href="https://github.com/karunaav/Document-Search" target="_blank">Code</a>
-          </div>
-        </article>
-               <!-- Calorie Plate AI -->
-        <article class="card reveal">
-          <div class="card-header">
-            <h3>Calorie Plate AI</h3>
-            <span class="badge">AI · Health</span>
-          </div>
-          <p>
-            An AI-powered calorie and nutrition assistant that analyzes food images and inputs
-            to estimate calories and macros, and supports features like BMI calculation and
-            goal-oriented (weight loss / muscle gain) suggestions.
-          </p>
-          <p class="card-tech">
-            Tech: FastAPI, Python, Computer Vision, React (frontend), REST APIs
-          </p>
-          <div class="card-links">
-            <!-- 🔗 Update these two links to your actual repo & live URL -->
-            <a href="https://github.com/karunaav/Calorie-Plate-Ai" target="_blank">Code</a>
-            <a href="https://your-live-calorie-app-url-here" target="_blank">Live Demo</a>
+            <a href="https://github.com/karunaav/Document-Search" target="_blank" class="card-btn">Code</a>
           </div>
         </article>
 
@@ -198,60 +226,45 @@
             <h3>AI Bookshelf Scanner</h3>
             <span class="badge">CV · OCR</span>
           </div>
-          <p>
-            A bookshelf scanner that uses <strong>EasyOCR</strong> to read book spines and helps
-            catalog and search your personal library. Built as a Flask app with a simple responsive UI.
+          <p class="card-text">
+            EasyOCR-based tool that reads book spines on a shelf and helps build a searchable
+            personal catalog. Built as a Flask app with a responsive UI.
           </p>
           <p class="card-tech">
             Tech: Python, Flask, EasyOCR, HTML, CSS, JavaScript
           </p>
           <div class="card-links">
-            <a href="https://github.com/karunaav/AI-Bookshelf-Scanner" target="_blank">Code</a>
+            <a href="https://github.com/karunaav/AI-Bookshelf-Scanner" target="_blank" class="card-btn">Code</a>
           </div>
         </article>
       </div>
 
-      <h3 class="section-subtitle undergrad-subtitle reveal">Undergraduate Projects</h3>
-      <div class="cards-grid undergrad-grid">
-        <!-- Verilog Vending Machine -->
-        <article class="card reveal">
-          <div class="card-header">
-            <h3>Vending Machine Controller (Verilog)</h3>
-            <span class="badge">Digital Design</span>
-          </div>
-          <p>
-            Designed a finite state machine (FSM)-based vending machine in Verilog, handling coin input,
-            product selection, balance tracking, and change return on FPGA/HDL.
-          </p>
-          <p class="card-tech">
-            Tech: Verilog, FSM Design, Digital Logic, FPGA
-          </p>
-        </article>
-
+      <h3 class="section-subtitle reveal">Undergraduate Highlights</h3>
+      <div class="cards-grid cards-undergrad">
         <!-- Morse Code Transceiver -->
         <article class="card reveal">
           <div class="card-header">
             <h3>Morse Code Transceiver</h3>
             <span class="badge">Comms</span>
           </div>
-          <p>
-            Built a Morse code transceiver that encodes text to Morse and transmits/receives it over a
-            communication channel, reinforcing digital and wireless communication concepts.
+          <p class="card-text">
+            Morse code transceiver that encodes text to Morse, transmits, and decodes at the receiver,
+            tying together digital communication and timing concepts.
           </p>
           <p class="card-tech">
             Tech: Communication Systems, Microcontroller/FPGA, Timing Logic
           </p>
         </article>
 
-        <!-- Health Care Management System -->
+        <!-- Java Health Care Management System -->
         <article class="card reveal">
           <div class="card-header">
             <h3>Java E-Health Care Management System</h3>
             <span class="badge">Full-Stack</span>
           </div>
-          <p>
-            Developed a healthcare management system with Java and SQL to manage patient records,
-            appointments, and billing. Frontend built with HTML/CSS/JS and backed by a relational DB.
+          <p class="card-text">
+            Java + SQL system to manage patient records, appointments, and billing with a
+            browser-based interface. Inspired later work on digital healthcare and ICTCS 2024 paper.
           </p>
           <p class="card-tech">
             Tech: Java, SQL, HTML, CSS, JavaScript
@@ -264,22 +277,28 @@
     <section id="experience" class="section experience reveal">
       <h2 class="section-title">Experience</h2>
       <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>UI/UX & Front-End Intern – Consolewaves Pvt Ltd</h3>
-          <p class="timeline-meta">Feb 2025 – May 2025 · Remote/India</p>
-          <ul>
-            <li>Designed responsive web UIs and a science-expo quiz using Figma, HTML, CSS, and JavaScript.</li>
-            <li>Converted wireframes into production-ready frontend components with attention to UX and accessibility.</li>
-          </ul>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>UI/UX & Front-End Intern – Consolewaves Pvt Ltd</h3>
+            <p class="timeline-meta">Feb 2025 – May 2025 · Remote/India</p>
+            <p class="timeline-text">
+              Designed responsive web UIs and a science-expo quiz using Figma, HTML, CSS, and JS.
+              Turned wireframes into production-ready components with attention to UX details.
+            </p>
+          </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <h3>Full-Stack Web Development Intern – Beekoder Technologies Pvt Ltd</h3>
-          <p class="timeline-meta">Oct 2023 – Nov 2023 · India</p>
-          <ul>
-            <li>Built a multi-page restaurant website with menu, reservation flows, and data stored in SQL.</li>
-            <li>Collaborated on frontend layouts, backend logic, and documentation.</li>
-          </ul>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Full-Stack Web Development Intern – Beekoder Technologies Pvt Ltd</h3>
+            <p class="timeline-meta">Oct 2023 – Nov 2023 · India</p>
+            <p class="timeline-text">
+              Built a multi-page restaurant website with menu and reservation flows backed by SQL.
+              Worked across front-end layout, back-end logic, and documentation.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -288,61 +307,57 @@
     <section id="education" class="section education reveal">
       <h2 class="section-title">Education</h2>
       <div class="edu-grid">
-        <div class="edu-card reveal">
+        <article class="edu-card">
           <h3>New York University – Tandon School of Engineering</h3>
           <p class="edu-meta">M.S. in Computer Engineering · 2025 – 2027 (in progress)</p>
-          <p>
-            Focus on AI/ML, full-stack systems, and hardware-aware computing, tying together
-            machine learning with strong engineering fundamentals.
+          <p class="edu-text">
+            Focusing on AI/ML, full-stack systems, and hardware-aware computing while building
+            projects that connect theory to deployable products.
           </p>
-        </div>
-        <div class="edu-card reveal">
+        </article>
+        <article class="edu-card">
           <h3>Dayananda Sagar College of Engineering</h3>
           <p class="edu-meta">B.E. in Electronics & Telecommunication</p>
-          <p>
-            Core coursework in communication systems, digital and analog electronics, embedded systems,
-            VLSI, and mini-projects such as vending machine controller and Morse code transceiver.
+          <p class="edu-text">
+            Studied communication systems, embedded & digital electronics, and mini-projects
+            including a Morse code transceiver and healthcare management tools.
           </p>
-        </div>
+        </article>
       </div>
     </section>
 
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section contact reveal">
       <h2 class="section-title">Contact</h2>
-      <p class="contact-text">
-        I’m open to internships, research roles, and collaborations in
-        <strong>AI/ML, full-stack development, and product-focused engineering.</strong>
+      <p class="section-text">
+        I’m open to <strong>internships</strong>, <strong>research roles</strong>, and
+        <strong>collaborations</strong> in AI/ML, health-tech, and product-focused engineering.
       </p>
       <div class="contact-grid">
-        <div class="contact-card reveal">
-          <h3>Say hello</h3>
+        <div class="contact-card">
+          <h3>Say hi</h3>
           <p>📧 <a href="mailto:fk2496@nyu.edu">fk2496@nyu.edu</a></p>
           <p>📱 <a href="tel:+17328192358">+1-732-819-2358</a></p>
         </div>
-        <div class="contact-card reveal">
+        <div class="contact-card">
           <h3>Profiles</h3>
-          <p>
-            💼 <a href="https://www.linkedin.com/in/karuna-v-8a41b1251" target="_blank">LinkedIn</a>
-          </p>
-          <p>
-            💻 <a href="https://github.com/karunaav" target="_blank">GitHub</a>
-          </p>
+          <p>💼 <a href="https://www.linkedin.com/in/karuna-v-8a41b1251" target="_blank">LinkedIn</a></p>
+          <p>💻 <a href="https://github.com/karunaav" target="_blank">GitHub</a></p>
         </div>
       </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer reveal">
-      <p>© <span id="year"></span> Karuna V · Built with HTML & CSS</p>
+      <p>© <span id="year"></span> Karuna V · Crafted with HTML, CSS & a lot of gradients ✨</p>
     </footer>
   </div>
 
   <script>
-    // Set current year in footer
+    // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Scroll reveal animation
+    // Scroll reveal
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -352,14 +367,27 @@
           }
         });
       },
-      {
-        threshold: 0.15,
-      }
+      { threshold: 0.15 }
     );
 
-    document.querySelectorAll(".reveal").forEach((el) => {
-      observer.observe(el);
-    });
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    // Photo upload preview
+    const uploadInput = document.getElementById("photoUpload");
+    const profileImg = document.getElementById("profileImg");
+
+    if (uploadInput && profileImg) {
+      uploadInput.addEventListener("change", (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          profileImg.src = ev.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
   </script>
 </body>
 </html>
+
