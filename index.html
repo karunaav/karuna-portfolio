@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karuna Venkatesh | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
         <div class="logo">KV</div>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -21,83 +21,91 @@
 
     <header id="about">
         <div class="container">
+            <div class="profile-container">
+                <img src="profile.jpeg" alt="Karuna Venkatesh" class="profile-img">
+            </div>
             <h1>Karuna Venkatesh</h1>
             <p class="subtitle">MS in Computer Engineering at <strong>NYU Tandon</strong></p>
-            <p>Passionate about Machine Learning, AI Logistics, and Full-Stack Development.</p>
+            <p>GPA: 3.667 | Focused on Machine Learning, Deep Learning, and AI Solutions.</p>
             <div class="social-links">
                 <a href="https://github.com/karunaav">GitHub</a>
                 <a href="https://linkedin.com/in/karuna-v-8a41b1251">LinkedIn</a>
+                <a href="mailto:fk2496@nyu.edu">Email</a>
             </div>
         </div>
     </header>
 
-    <section id="skills" class="container">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>ML & Deep Learning</h3>
-                <p>TensorFlow, Keras, PyTorch, LSTM, CNN, Scikit-learn</p>
+    <section id="experience" class="container">
+        <h2>Professional Experience</h2>
+        <div class="timeline">
+            <div class="exp-item">
+                <h3>Front-End Development & UI/UX Intern</h3>
+                <p class="company">Consolewaves Pvt Ltd | Feb 2025 - May 2025</p>
+                <ul>
+                    <li>Developed responsive portfolios and science-expo quizzes using Figma and HTML/CSS/JS.</li>
+                    <li>Refined interface flows through user testing for improved usability.</li>
+                </ul>
             </div>
-            <div class="skill-card">
-                <h3>Languages</h3>
-                <p>Python, Java, SQL, JavaScript (ES6+), HTML5/CSS3</p>
-            </div>
-            <div class="skill-card">
-                <h3>Frameworks</h3>
-                <p>React 18, Vite, FastAPI, Flask, LangChain, Tailwind CSS</p>
+            <div class="exp-item">
+                <h3>Full-Stack Web Development Intern</h3>
+                <p class="company">Beekoder Technologies Pvt Ltd | Oct 2023 - Nov 2023</p>
+                <ul>
+                    <li>Built multi-page restaurant websites with Bootstrap and SQL.</li>
+                    <li>Integrated front-end with back-end for data validation and deployment.</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <section id="projects" class="container">
-        <h2>Featured Projects</h2>
+        <h2>Projects & Research</h2>
         <div class="project-grid">
+            <div class="project-card highlight">
+                <div class="badge">1st Place</div>
+                <h3>NourishAI Hackathon</h3>
+                <p>Built a culturally-tailored nutrition AI using WhatsApp Business API, Claude, and DeepSeek AI for SNAP automation.</p>
+                <span class="tags">n8n, Anthropic Claude, DeepSeek AI</span>
+            </div>
+
             <div class="project-card">
                 <h3>Stock Price Prediction (RNN)</h3>
-                <p>Time-series forecasting using LSTM models and feature engineering.</p>
-                <span class="tags">Python, TensorFlow, Matplotlib</span>
-                <a href="https://github.com/karunaav/ML-final-project--Stock-Price-Prediction-Using-RNNs" class="btn">View Project</a>
+                <p>Developed an LSTM model for time-series forecasting with feature engineering and performance evaluation (MAE, RMSE).</p>
+                <span class="tags">Python, TensorFlow, Keras, LSTM</span>
+                <a href="https://github.com/karunaav/ML-final-project--Stock-Price-Prediction-Using-RNNs" class="btn">GitHub</a>
             </div>
 
             <div class="project-card">
                 <h3>RAG Chatbot</h3>
-                <p>AI-powered semantic search for PDF documents using LangChain.</p>
-                <span class="tags">FastAPI, React, LangChain</span>
-                <a href="https://github.com/karunaav/Document-Search" class="btn">View Project</a>
+                <p>Built a FastAPI backend with LangChain for PDF-based question answering and a React 18 dark UI.</p>
+                <span class="tags">LangChain, FastAPI, React 18, Vite</span>
+                <a href="https://github.com/karunaav/Document-Search" class="btn">GitHub</a>
             </div>
 
             <div class="project-card">
                 <h3>Skylar Companion</h3>
-                <p>A gentle AI friend with a glassmorphism UI for emotional check-ins.</p>
-                <span class="tags">React, Vite, FastAPI</span>
-                <a href="https://github.com/karunaav/Skylar-companion" class="btn">View Project</a>
+                <p>A gentle AI companion with a glassmorphism UI offering supportive conversations and emotional check-ins.</p>
+                <span class="tags">React + Vite, FastAPI, Streaming AI</span>
+                <a href="https://github.com/karunaav/Skylar-companion" class="btn">GitHub</a>
             </div>
 
             <div class="project-card">
                 <h3>Face Mask Detection</h3>
-                <p>Real-time CNN-based detection robust across varied lighting.</p>
-                <span class="tags">OpenCV, CNN, Keras</span>
-                <a href="https://github.com/karunaav/Face-Mask-Detection-using-CNN" class="btn">View Project</a>
+                <p>Developed a CNN for real-time detection with image augmentation and hyperparameter tuning.</p>
+                <span class="tags">OpenCV, TensorFlow, CNN</span>
+                <a href="https://github.com/karunaav/Face-Mask-Detection-using-CNN" class="btn">GitHub</a>
             </div>
 
-            <div class="project-card">
-                <h3>AI Bookshelf Scanner</h3>
-                <p>Optical Character Recognition (OCR) for digitalizing book collections.</p>
-                <span class="tags">Flask, EasyOCR</span>
-                <a href="https://github.com/karunaav/AI-Bookshelf-Scanner" class="btn">View Project</a>
-            </div>
-
-            <div class="project-card highlight">
-                <h3>1st Place - NourishAI Hackathon</h3>
-                <p>SNAP household logistics automation using Claude & DeepSeek AI.</p>
-                <span class="tags">n8n, Anthropic, WhatsApp API</span>
+             <div class="project-card">
+                <h3>Publication: ICTCS 2024</h3>
+                <p>Ninth International Conference on Information and Communication Technology for Competitive Strategies.</p>
+                <span class="tags">Research Paper</span>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <p>Contact: fk2496@nyu.edu | 732-819-2358</p>
-        <p>&copy; 2026 Karuna Venkatesh</p>
+    <footer>
+        <p>Karuna Venkatesh | 732-819-2358 | fk2496@nyu.edu</p>
+        <p>Brooklyn, New York</p>
     </footer>
 
 </body>
