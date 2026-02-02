@@ -1,901 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Karuna V | Animated Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Portfolio of Karuna V – MS Computer Engineering at NYU, AI/ML & Full-Stack Developer, UI/UX and Frontend Enthusiast."
-  />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --primary: #6366f1;
-      --primary-dark: #4f46e5;
-      --accent: #ec4899;
-      --accent-light: #f472b6;
-      --bg-dark: #0f172a;
-      --bg-darker: #020617;
-      --text-light: #e2e8f0;
-      --text-muted: #94a3b8;
-      --border: #1e293b;
-      --success: #10b981;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, var(--bg-darker) 0%, #1a1f3a 100%);
-      color: var(--text-light);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Background orbs */
-    .bg-orb {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: 0.15;
-      z-index: -1;
-    }
-
-    .orb-1 {
-      width: 400px;
-      height: 400px;
-      background: var(--primary);
-      top: -100px;
-      left: -100px;
-      animation: float 8s ease-in-out infinite;
-    }
-
-    .orb-2 {
-      width: 300px;
-      height: 300px;
-      background: var(--accent);
-      bottom: 100px;
-      right: -50px;
-      animation: float 10s ease-in-out infinite 1s;
-    }
-
-    .orb-3 {
-      width: 350px;
-      height: 350px;
-      background: #8b5cf6;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: float 12s ease-in-out infinite 2s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(30px); }
-    }
-
-    .page-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 30px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      font-size: 20px;
-    }
-
-    .logo-orbit {
-      position: relative;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--primary);
-      border-radius: 50%;
-      box-shadow: 0 0 20px var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 14px;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    /* Reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      padding: 60px 0;
-    }
-
-    .hero-left {
-      z-index: 10;
-    }
-
-    .hero-pill {
-      display: inline-block;
-      padding: 10px 16px;
-      background: rgba(99, 102, 241, 0.1);
-      border: 1px solid var(--primary);
-      border-radius: 50px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 56px;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-subtitle {
-      font-size: 16px;
-      color: var(--text-muted);
-      margin-bottom: 30px;
-      line-height: 1.8;
-    }
-
-    .hero-subtitle strong {
-      color: var(--text-light);
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 40px;
-    }
-
-    .btn {
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 14px;
-      text-decoration: none;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      border: 1.5px solid var(--primary);
-      color: var(--primary);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(99, 102, 241, 0.1);
-    }
-
-    .hero-meta {
-      display: flex;
-      gap: 24px;
-      margin-bottom: 30px;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .hero-meta a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .hero-meta a:hover {
-      color: var(--accent);
-    }
-
-    .hero-metrics {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .metric-chip {
-      padding: 12px 16px;
-      background: rgba(99, 102, 241, 0.05);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .metric-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-
-    .metric-value {
-      font-weight: 600;
-      color: var(--text-light);
-      font-size: 14px;
-    }
-
-    .profile-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 1;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
-    }
-
-    .profile-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Sections */
-    .section {
-      padding: 80px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-title {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 40px;
-      font-weight: 700;
-      margin-bottom: 40px;
-    }
-
-    .section-subtitle {
-      font-size: 20px;
-      font-weight: 600;
-      margin: 40px 0 24px 0;
-      color: var(--text-light);
-    }
-
-    .section-text {
-      font-size: 16px;
-      color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    .section-text strong {
-      color: var(--text-light);
-    }
-
-    /* Chips */
-    .chip-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .chip-group h3 {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .chip {
-      padding: 6px 12px;
-      background: rgba(99, 102, 241, 0.1);
-      border: 1px solid var(--primary);
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--primary);
-    }
-
-    /* Cards */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-
-    .card {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      transition: all 0.3s;
-    }
-
-    .card:hover {
-      border-color: var(--primary);
-      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
-      transform: translateY(-4px);
-    }
-
-    .card-featured {
-      border-color: var(--primary);
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.08) 100%);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 16px;
-      gap: 12px;
-    }
-
-    .card-header h3 {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .badge {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 20px;
-      background: rgba(139, 92, 246, 0.2);
-      color: #c084fc;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .badge-hot {
-      background: rgba(236, 72, 153, 0.2);
-      color: var(--accent-light);
-    }
-
-    .card-text {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      line-height: 1.6;
-    }
-
-    .card-tech {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      font-style: italic;
-    }
-
-    .card-links {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .card-btn {
-      padding: 6px 14px;
-      background: var(--primary);
-      color: white;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s;
-      border: 1px solid var(--primary);
-    }
-
-    .card-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-    }
-
-    .card-btn-secondary {
-      background: transparent;
-      color: var(--primary);
-    }
-
-    .card-btn-secondary:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    /* Timeline */
-    .timeline {
-      position: relative;
-      padding-left: 30px;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--primary), transparent);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 40px;
-      padding-bottom: 20px;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -37px;
-      top: 0;
-      width: 14px;
-      height: 14px;
-      background: var(--primary);
-      border: 3px solid var(--bg-darker);
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
-    }
-
-    .timeline-content h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .timeline-meta {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .timeline-text {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* Education */
-    .edu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .edu-card {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: 12px;
-      transition: all 0.3s;
-    }
-
-    .edu-card:hover {
-      border-color: var(--primary);
-    }
-
-    .edu-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .edu-meta {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      font-weight: 500;
-    }
-
-    .edu-text {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* Contact */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .contact-card {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: 12px;
-    }
-
-    .contact-card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .contact-card p {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .contact-card a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .contact-card a:hover {
-      color: var(--accent);
-    }
-
-    /* Footer */
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 0;
-      text-align: center;
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-top: 60px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .hero-actions .btn {
-        text-align: center;
-      }
-
-      .section-title {
-        font-size: 32px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karuna Venkatesh | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="bg-orb orb-3"></div>
 
-  <div class="page-wrapper">
-    <!-- NAVBAR -->
-    <header class="navbar reveal">
-      <div class="nav-left">
-        <span class="logo-orbit">
-          <span class="logo-dot"></span>
-        </span>
-        <span class="logo-text">Karuna V</span>
-      </div>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#research">Research</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <nav>
+        <div class="logo">KV</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="about">
+        <div class="container">
+            <h1>Karuna Venkatesh</h1>
+            <p class="subtitle">MS in Computer Engineering at <strong>NYU Tandon</strong></p>
+            <p>Passionate about Machine Learning, AI Logistics, and Full-Stack Development.</p>
+            <div class="social-links">
+                <a href="https://github.com/karunaav">GitHub</a>
+                <a href="https://linkedin.com/in/karuna-v-8a41b1251">LinkedIn</a>
+            </div>
+        </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-left reveal">
-        <p class="hero-pill">MS Computer Engineering @ NYU · AI/ML & Full-Stack</p>
-        <h1>
-          Crafting <span class="gradient-text">intelligent</span><br />
-          & animated experiences.
-        </h1>
-        <p class="hero-subtitle">
-          I'm Karuna, a developer who loves building <strong>AI-driven apps</strong> with
-          playful, polished frontends — from calorie-aware health tools to
-          sentiment-driven stock forecasting, RAG chatbots, and
-          <strong>hackathon-winning nutrition assistants</strong>.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">✨ Explore my work</a>
-          <a href="#contact" class="btn btn-ghost">Let's collaborate</a>
+    <section id="skills" class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>ML & Deep Learning</h3>
+                <p>TensorFlow, Keras, PyTorch, LSTM, CNN, Scikit-learn</p>
+            </div>
+            <div class="skill-card">
+                <h3>Languages</h3>
+                <p>Python, Java, SQL, JavaScript (ES6+), HTML5/CSS3</p>
+            </div>
+            <div class="skill-card">
+                <h3>Frameworks</h3>
+                <p>React 18, Vite, FastAPI, Flask, LangChain, Tailwind CSS</p>
+            </div>
         </div>
-        <div class="hero-meta">
-          <span>📍 New York, USA</span>
-          <span>💻 <a href="https://github.com/karunaav" target="_blank">github.com/karunaav</a></span>
-        </div>
-
-        <div class="hero-metrics">
-          <div class="metric-chip">
-            <span class="metric-label">Focus</span>
-            <span class="metric-value">AI · Health · Finance</span>
-          </div>
-          <div class="metric-chip">
-            <span class="metric-label">Stack</span>
-            <span class="metric-value">FastAPI · React · ML</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-right reveal">
-        <div class="profile-frame">
-          <img src="profile.jpeg" alt="Photo of Karuna V" class="profile-img" />
-        </div>
-      </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section about reveal">
-      <h2 class="section-title">About</h2>
-      <p class="section-text">
-        I'm a graduate student in <strong>Computer Engineering at NYU Tandon</strong> with a
-        background in <strong>Electronics & Telecommunication (B.E., Dayananda Sagar College of Engineering)</strong>.
-        I enjoy blending <strong>machine learning</strong>, <strong>backend engineering</strong>, and
-        <strong>animated UI/UX</strong> to build tools that feel both smart and fun to use.
-      </p>
-      <p class="section-text">
-        Recently I've been working on AI products around <strong>nutrition & health</strong>,
-        <strong>finance</strong>, and <strong>document intelligence</strong> — including a
-        <strong>hackathon-winning WhatsApp nutrition coach (NourishAI)</strong> and research on
-        digital healthcare systems.
-      </p>
+    <section id="projects" class="container">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Stock Price Prediction (RNN)</h3>
+                <p>Time-series forecasting using LSTM models and feature engineering.</p>
+                <span class="tags">Python, TensorFlow, Matplotlib</span>
+                <a href="https://github.com/karunaav/ML-final-project--Stock-Price-Prediction-Using-RNNs" class="btn">View Project</a>
+            </div>
 
-      <div class="chip-grid">
-        <div class="chip-group">
-          <h3>Languages & Core</h3>
-          <div class="chips">
-            <span class="chip">Python</span>
-            <span class="chip">Java</span>
-            <span class="chip">JavaScript</span>
-            <span class="chip">SQL</span>
-          </div>
+            <div class="project-card">
+                <h3>RAG Chatbot</h3>
+                <p>AI-powered semantic search for PDF documents using LangChain.</p>
+                <span class="tags">FastAPI, React, LangChain</span>
+                <a href="https://github.com/karunaav/Document-Search" class="btn">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Skylar Companion</h3>
+                <p>A gentle AI friend with a glassmorphism UI for emotional check-ins.</p>
+                <span class="tags">React, Vite, FastAPI</span>
+                <a href="https://github.com/karunaav/Skylar-companion" class="btn">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Face Mask Detection</h3>
+                <p>Real-time CNN-based detection robust across varied lighting.</p>
+                <span class="tags">OpenCV, CNN, Keras</span>
+                <a href="https://github.com/karunaav/Face-Mask-Detection-using-CNN" class="btn">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>AI Bookshelf Scanner</h3>
+                <p>Optical Character Recognition (OCR) for digitalizing book collections.</p>
+                <span class="tags">Flask, EasyOCR</span>
+                <a href="https://github.com/karunaav/AI-Bookshelf-Scanner" class="btn">View Project</a>
+            </div>
+
+            <div class="project-card highlight">
+                <h3>1st Place - NourishAI Hackathon</h3>
+                <p>SNAP household logistics automation using Claude & DeepSeek AI.</p>
+                <span class="tags">n8n, Anthropic, WhatsApp API</span>
+            </div>
         </div>
-        <div class="chip-group">
-          <h3>AI / Data</h3>
-          <div class="chips">
-            <span class="chip">Machine Learning</span>
-            <span class="chip">FinBERT</span>
-            <span class="chip">Transformers</span>
-            <span class="chip">SHAP</span>
-            <span class="chip">Pandas</span>
-            <span class="chip">NumPy</span>
-          </div>
-        </div>
-        <div class="chip-group">
-          <h3>Web & UX</h3>
-          <div class="chips">
-            <span class="chip">FastAPI</span>
-            <span class="chip">Flask</span>
-            <span class="chip">React</span>
-            <span class="chip">Tailwind / CSS</span>
-            <span class="chip">Figma</span>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section projects">
-      <h2 class="section-title reveal">Projects</h2>
+    <footer id="contact">
+        <p>Contact: fk2496@nyu.edu | 732-819-2358</p>
+        <p>&copy; 2026 Karuna Venkatesh</p>
+    </footer>
 
-      <h3 class="section-subtitle reveal">Pinned from GitHub</h3>
-      <div class="cards-grid">
-        <!-- Skylar Companion -->
-        <article class="card reveal card-featured">
-          <div class="card-header">
-            <h3>Skylar – Gentle AI Companion</h3>
-            <span class="badge badge-hot">LLM · Full-Stack</span>
-          </div>
-          <p class="card-text">
-            A cozy AI companion built with <strong>React + Vite and FastAPI</strong> focused on supportive, 
-            non-therapeutic conversation. Features streaming replies, session memory, customizable "vibes", 
-            and safety-aware behavior with a beautiful glassmorphism UI.
-          </p>
-          <p class="card-tech">
-            Tech: React, Vite, FastAPI, Python, LLM APIs, SSE
-          </p>
-          <div class="card-links">
-            <a href="https://github.com/karunaav/Skylar-companion" target="_blank" class="card-btn">Code</a>
-            <a href="https://skylar-frontend.onrender.com" target="_blank" class="card-btn card-btn-secondary">Live Demo</a>
-          </div>
-        </article>
-
-        <!-- Sentiment Forecast -->
-        <article class="card reveal">
-          <div class="card-header">
-            <h3>Sentiment-Aware Stock Forecasting</h3>
-            <span class="badge">ML · Finance</span>
-          </div>
-          <p class="card-text">
-            End-to-end app predicting next-day stock returns using <strong>Transformer models + FinBERT sentiment analysis</strong>. 
-            Includes a Dash dashboard with backtesting metrics, SHAP-based explainability, and real-time predictions.
-          </p>
-          <p class="card-tech">
-            Tech: Python, FastAPI, Dash, FinBERT, SHAP, MLflow
-          </p>
-          <div class="card-links">
-            <a href="https://github.com/karunaav/Sentiment-forecast-v3" target="_blank" class="card-btn">Code</a>
-            <a href="https://sentiment-forecast-v3.onrender.com/dashboard/" target="_blank" class="card-btn card-btn-secondary">Live Demo</a>
-          </div>
-        </article>
-
-        <!-- Document Search -->
-        <article class="card reveal">
-          <div class="card-header">
-            <h3>AI Document Search – RAG PDF Chatbot</h3>
-            <span class="badge">RAG · NLP</span>
-          </div>
-          <p class="card-text">
-            Upload a PDF and chat with it intelligently. Uses <strong>TF-IDF + retrieval-augmented generation</strong>
-            to answer questions with relevant context through a sleek React interface.
-          </p>
-          <p class="card-tech">
-            Tech: FastAPI, LangChain, scikit-learn, PyPDF2, React, Tailwind CSS
-          </p>
-          <div class="card-links">
-            <a href="https://github.com/karunaav/Document-Search" target="_blank" class="card-btn">Code</a>
-          </div>
-        </article>
-
-        <!-- AI Bookshelf Scanner -->
-        <article class="card reveal">
-          <div class="card-header">
-            <h3>AI Bookshelf Scanner</h3>
-            <span class="badge">CV · OCR</span>
-          </div>
-          <p class="card-text">
-            EasyOCR-based tool that reads book spines on a shelf and helps build a searchable 
-            personal catalog. Built as a Flask app with a responsive, intuitive UI.
-          </p>
-          <p class="card-tech">
-            Tech: Python, Flask, EasyOCR, HTML, CSS, JavaScript
-          </p>
-          <div class="card-links">
-            <a href="https://github.com/karunaav/AI-Bookshelf-Scanner" target="_blank" class="card-btn">Code</a>
-          </div>
-        </article>
-
-        <!-- Stock Price Prediction RNN -->
-        <article class="card reveal">
-          <div class="card-header">
-            <h3>Stock Price Prediction Using RNNs</h3>
-            <span class="badge">ML · Time-Series</span>
-          </div>
-          <p class="card-text">
-            Deep learning project leveraging <strong>Recurrent Neural Networks (RNNs)</strong> for 
-            time-series forecasting of stock prices. Includes data preprocessing, model evaluation, and visualizations.
-          </p>
-          <p class="card-tech">
-            Tech: Python, TensorFlow/Keras, RNN, LSTM, Pandas, Matplotlib
-          </p>
-          <div class="card-links">
-            <a href="https://github.com/karunaav/ML-final-project--Stock-Price-Prediction-Using-RNNs" target="_blank" class="card-btn">Code</a>
-          </div>
-        </article>
-
-        <!-- Face Mask Detection -->
-        <article class="card reveal">
-          <div class="card-header">
-            <h3>Face Mask Detection Using CNN</h3>
-            <span class="badge">CV · Deep Learning</span>
-          </div>
-          <p class="card-text">
-            Computer Vision project using <strong>Convolutional Neural Networks (CNNs)</strong> to detect 
-            whether a person is wearing a face mask. Features real-time detection and classification.
-          </p>
-          <p class="card-tech">
-            Tech: Python, TensorFlow/Keras, CNN, OpenCV, Numpy
-          </p>
-          <div class="card-links">
-            <a href="https://github.com/karunaav/Face-Mask-Detection-using-CNN" target="_blank" class="card-btn">Code</a>
-          </div>
-        </article>
-      </div>
-
-      <h3 class="section-subtitle reveal">Notable Projects</h3>
-      <div class="cards-grid">
-        <!-- Calorie Plate AI -->
-        <article class="card reveal">
-          <div class="card-header">
-            <h3>Calorie Plate AI</h3>
-            <span class="badge badge-hot">Health · CV · AI</span>
-          </div>
-          <p class="card-text">
-            AI-powered nutrition assistant that analyzes food and plate images, estimates calories 
-            & macros, and supports BMI tracking plus goals for <strong>weight loss or muscle gain</strong>.
-          </p>
-          <p class="card-tech">
-            Tech: FastAPI
-
+</body>
+</html>
