@@ -42,31 +42,47 @@ header { text-align: center; padding: 5rem 1rem; }
 .profile-img {
     width: 160px; height: 160px; border-radius: 50%;
     border: 3px solid var(--accent); margin-bottom: 1rem;
+    object-fit: cover;
 }
 h1 { font-size: 3rem; margin-bottom: 0.5rem; color: #fff; }
 .subtitle { color: var(--text-secondary); margin-bottom: 1.5rem; }
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 8px 20px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.social-links a:hover { background: var(--accent); color: var(--bg-color); }
 
 /* Skills Grid */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
 .skill-category h3 { color: var(--accent); margin-bottom: 0.5rem; font-size: 1.1rem; }
 
 /* Projects & Experience */
-.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
 .project-card, .exp-item, .edu-item {
     background: var(--card-bg); padding: 1.5rem; border-radius: 12px;
     border: 1px solid #334155; transition: 0.3s;
 }
 .project-card:hover { border-color: var(--accent); transform: translateY(-5px); }
 .highlight { border: 2px solid var(--highlight); }
-.badge { background: var(--highlight); color: #000; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.7rem; width: fit-content; }
+.badge { background: var(--highlight); color: #000; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.7rem; width: fit-content; margin-bottom: 10px; }
+
+.exp-item ul { margin-top: 0.5rem; padding-left: 1.2rem; color: var(--text-secondary); }
+.company { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
 
 /* Education & Certs */
 .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
 .cert-list { background: rgba(56, 189, 248, 0.05); padding: 1.5rem; border-radius: 12px; }
-.cert-list ul { list-style: none; padding: 0; }
+.cert-list ul { list-style: circle; padding-left: 1.5rem; color: var(--text-secondary); }
 
 .tags { color: var(--accent); font-size: 0.8rem; font-weight: bold; display: block; margin-top: 10px; }
-.btn { color: #fff; text-decoration: underline; font-size: 0.9rem; }
+.btn { display: inline-block; margin-top: 15px; color: var(--accent); text-decoration: underline; font-weight: bold; }
 
 footer { text-align: center; padding: 3rem; border-top: 1px solid #334155; color: var(--text-secondary); }
 
